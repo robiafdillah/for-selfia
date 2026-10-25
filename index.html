@@ -157,11 +157,28 @@ footer{text-align:center;padding:30px 15px 45px;font:12px Arial,sans-serif;color
 
 <section id="kejutan">
  <div class="final">
-  <div class="kicker" style="color:#ffe4ef">One last thing...</div>
-  <h2>Buat sayangkuuu, Selfia ❤️, kesayanganku 💖</h2>
-  <p>Kalau aku bisa minta satu hal untuk ulang tahunmu, aku ingin kamu selalu punya alasan untuk bahagia—dan semoga aku bisa ikut menjadi salah satu alasannya.</p>
-  <button class="pill secondary" onclick="reveal()">Tekan untuk kejutan terakhir 🎁</button>
-  <p id="surprise" hidden>🎉 Surpriseee! Kamu berharga, kamu pantas dicintai dengan baik, dan kamu layak mendapatkan banyak hal indah. Selamat ulang tahun, sayang. Aku sayang kamu! 💗💗💗</p>
+  <div class="kicker" style="color:#ffe4ef">One last little surprise 💌</div>
+  <h2>Masih Ada Satu Hadiah Lagi, Sayang… ❤️</h2>
+  <p>Ada pesan kecil yang aku simpan khusus buat sayangkuuu. Buka yaaa, cantikkkuuu. WKWKWK 🤭💗</p>
+  <div style="font-size:64px;margin:16px 0" aria-hidden="true">💌</div>
+  <button class="pill secondary" id="openSurpriseBtn" onclick="openFinalSurprise()">Buka surat terakhir 💗</button>
+  <div id="finalSurpriseMessage" hidden style="max-width:700px;margin:22px auto 0;padding:22px;background:#fff8fc;border-radius:18px;color:#7c3154;line-height:1.85;text-align:left;white-space:pre-line">
+   <h3 style="text-align:center;color:#bd3f75">Selamat Ulang Tahun, Selfia Sayang! 🎂❤️</h3>
+   <p>Sayangkuuu, cantikkkuuu 💗🥹
+
+Selamat ulang tahun yaaa, sayangnya akuuu. Semoga di umur yang baru ini, sayangkuuu selalu diberi kesehatan, hati yang tenang, langkah yang dimudahkan, dan banyak alasan untuk tersenyum.
+
+Aku mungkin belum bisa memberikan semuanya, cantikkkuuu, tapi aku ingin terus belajar jadi seseorang yang bisa bikin sayangkuuu merasa disayang, dihargai, dan didukung. Terima kasih yaaa, sayang, sudah hadir dan membuat hari-hariku terasa lebih berwarna.
+
+Jangan lupa bahagia yaaa, cantikkkuuu. Jangan terlalu keras sama diri sendiri. Kalau capek, istirahat dulu yaa, sayangkuuu. Aku selalu dukung hal-hal baik yang sayang perjuangkan.
+
+Semoga semua doa baik yang sayangkuuu simpan pelan-pelan menemukan jalannya. Hari ini harus banyak senyum yaaa, cantikkkuuu, karena ini hari spesialnya perempuan favoritku. WKWKWK 🤭❤️
+
+Aku sayang banget sama sayangkuuu. Selamat ulang tahun sekali lagi yaaa, cantikkkuuu. Semoga hari-hari sayang selalu dipenuhi hal-hal baik, kebahagiaan, dan banyak kejutan manis. 💐❤️
+
+I LOVE YOUUU, SAYANGKUUU! 💗😘</p>
+   <div style="text-align:center;font-size:24px">💗 💖 💗</div>
+  </div>
  </div>
 </section>
 <footer>Dibuat dengan banyak cinta, khusus untuk Selfia Alfi Nazilatur Rohma ♡</footer>
@@ -201,5 +218,14 @@ function openGiftAndPlay(){
  if(letter) setTimeout(()=>letter.scrollIntoView({behavior:'smooth',block:'start'}),250);
 }
 
+</script>
+<script>
+function openFinalSurprise(){
+ const box=document.getElementById('finalSurpriseMessage');
+ const btn=document.getElementById('openSurpriseBtn');
+ if(box){box.hidden=false;}
+ if(btn){btn.textContent='Surat terbuka, sayang ❤️';}
+ if(box){setTimeout(()=>box.scrollIntoView({behavior:'smooth',block:'center'}),100);}
+}
 </script>
 </body></html>
