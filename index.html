@@ -44,6 +44,18 @@ footer{text-align:center;padding:30px 15px 45px;font:12px Arial,sans-serif;color
 </style>
 </head>
 <body>
+
+<div id="giftOverlay" style="position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#ffe5ef,#fff5f8 55%,#ffd6e7);text-align:center">
+ <div style="max-width:460px;background:#ffffffdf;border:1px solid #fff;border-radius:28px;padding:32px 24px;box-shadow:0 16px 50px #b8326920">
+  <div style="font-size:54px;margin-bottom:12px">💌💗🎁</div>
+  <p style="letter-spacing:.16em;text-transform:uppercase;color:#b83269;font-size:12px;font-weight:bold">buat seseorang yang paling aku sayang</p>
+  <h1 style="font-size:clamp(30px,8vw,44px);line-height:1.15;color:#8d2855;margin:12px 0">Happy Birthday, Sayangkuuu! 🥹❤️</h1>
+  <p style="color:#75465b;line-height:1.7">Aku punya sesuatu buat kamu nihhh. Bukanya pelan-pelan yaa, cantikkuu. WKWKWK 😚</p>
+  <button id="openGiftBtn" onclick="openGiftAndPlay()" style="border:0;border-radius:999px;padding:15px 24px;background:#b83269;color:white;font-size:16px;font-weight:bold;box-shadow:0 8px 20px #b8326933">BUKA HADIAH DARI AKU, SAYANGGG ❤️</button>
+  <p style="font-size:12px;color:#9b7284;margin-top:16px">Ada surat kecil dan lagu buat kamu 💗</p>
+ </div>
+</div>
+
 <div id="intro">
   <div class="card">
     <div class="kicker">14 November 2005 · A little celebration for</div>
@@ -60,12 +72,16 @@ footer{text-align:center;padding:30px 15px 45px;font:12px Arial,sans-serif;color
   <div class="kicker center">A letter from me to you</div>
   <h2>Happy Birthday, Sayangku 💗</h2>
   <div class="letter">
-   <p>Happy birthday, sayanggg. Selamat ulang tahun yaa, Selfia Alfi Nazilatur Rohma. 🥹💗</p>
-   <p>Nggak kerasa, hari spesial kamu datang lagi. Aku berharap di umur yang baru ini kamu selalu diberi kesehatan, kebahagiaan, kelancaran dalam setiap urusan, dan banyak alasan untuk tersenyum.</p>
-   <p>Terima kasih sudah hadir di hidupku. Terima kasih untuk setiap cerita, tawa, perhatian, dan hal-hal kecil yang mungkin sederhana, tetapi berarti banget buat aku. Aku mungkin nggak selalu sempurna dalam menyampaikan rasa sayangku, tapi aku ingin kamu tahu kalau kamu adalah seseorang yang sangat berarti buatku.</p>
-   <p>Kalau nanti ada hari yang terasa berat, semoga kamu ingat bahwa kamu nggak harus menghadapi semuanya sendirian. Aku ingin terus belajar memahami kamu, menemani kamu, dan merayakan setiap hal baik yang datang ke hidupmu.</p>
-   <p>Semoga semua doa baik yang kamu simpan pelan-pelan menemukan jalannya. Jangan lupa bahagia, jangan terlalu keras sama diri sendiri, dan tetap jadi Selfia yang aku sayang. Aku sayang kamu, hari ini, besok, dan semoga untuk banyak hari setelahnya. ❤️</p>
-   <p class="center">With all my love,<br><strong>orang yang sayang banget sama kamu ♡</strong></p>
+   
+  <p>Happy birthday, sayangkuuu! ❤️🥹🎂</p>
+<p>Selamat ulang tahun yaa, cantiknya akuuu, Selfia Alfi Nazilatur Rohmaaa! Semoga di umur yang baru ini kamu makin bahagia, makin banyak hal baik yang datang, dan semua doa yang kamu simpan bisa satu per satu jadi kenyataan. Aamiin paling serius! 🤍</p>
+<p>Sayang, makasih yaa udah hadir di hidupku. Kamu tuh punya cara sendiri buat bikin hari-hariku jadi lebih berwarna. Kadang cuma gara-gara chat kamu, cerita random kamu, atau lihat senyum kamu aja, aku udah bisa seneng sendiri wkwkwk. Emang sesimpel itu aku kalau soal kamu. 😚❤️</p>
+<p>Aku seneng banget bisa punya kamu. Aku suka semua hal kecil tentang kita, mulai dari cerita nggak penting, bercanda bareng, sampai momen-momen sederhana yang mungkin kelihatannya biasa aja, tapi buat aku punya arti tersendiri.</p>
+<p>Semoga kita bisa terus bikin banyak kenangan indah bareng yaa, sayang. Makin hari makin kenal satu sama lain, makin ngerti, makin kompak, dan makin sayang tentunyaaa. Aku pengen jadi orang yang selalu bikin kamu nyaman, yang bisa kamu ajak cerita apa aja, dan yang bikin kamu ngerasa dicintai setiap hari. ❤️</p>
+<p>Pokoknya hari ini kamu harus banyak senyum, banyak bahagia, dan jangan lupa kalau ada satu cowok yang sayang banget sama kamu, yang bangga punya kamu, dan yang selalu seneng bisa manggil kamu <em>sayangkuuu</em>. IYAA, ITU AKUUU WKWKWK! 😭❤️</p>
+<p>Sekali lagi, happy birthday, cintakuuu. Semoga tahun ini jadi tahun yang indah buat kamu dan semoga kita bisa terus tumbuh bareng, saling sayang, dan mewujudkan banyak hal yang kita impikan berdua.</p>
+<p><strong>I love you so much, Selfiaaa. Kamu kesayanganku, hari ini, besok, dan seterusnyaaa. ❤️🫶🏻💋</strong></p>
+  
   </div>
  </div>
 </section>
@@ -145,15 +161,9 @@ footer{text-align:center;padding:30px 15px 45px;font:12px Arial,sans-serif;color
 <footer>Dibuat dengan banyak cinta, khusus untuk Selfia Alfi Nazilatur Rohma ♡</footer>
 <script>
 
-function playSong(){
- const player=document.getElementById('songPlayer');
- const frame=document.getElementById('songFrame');
- player.style.display='block';
- frame.src='https://www.youtube-nocookie.com/embed/AR2-ux3w9bs?autoplay=1&playsinline=1&rel=0';
- document.getElementById('playSongBtn').textContent='Lagu sedang diputar ♫';
- player.scrollIntoView({behavior:'smooth',block:'center'});
-}
-\nfunction hearts(){const e=document.createElement('div');e.className='floating';e.textContent=['♡','♥','💗','✧'][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(14+Math.random()*20)+'px';e.style.color=['#d84f8d','#f08db6','#fff'][Math.floor(Math.random()*3)];e.style.animationDuration=(6+Math.random()*6)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),12500)}
+
+
+function hearts(){const e=document.createElement('div');e.className='floating';e.textContent=['♡','♥','💗','✧'][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(14+Math.random()*20)+'px';e.style.color=['#d84f8d','#f08db6','#fff'][Math.floor(Math.random()*3)];e.style.animationDuration=(6+Math.random()*6)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),12500)}
 setInterval(hearts,450);
 function loadPhoto(input){const file=input.files&&input.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{const box=input.parentElement;box.innerHTML='';const img=document.createElement('img');img.src=reader.result;img.alt='Foto kenangan';box.appendChild(img);box.appendChild(input);};reader.readAsDataURL(file)}
 function countDays(){const value=document.getElementById('dateTogether').value;const el=document.getElementById('counter');if(!value){el.innerHTML='<p>Isi tanggal jadian kalian dulu, ya 💗</p>';return}const start=new Date(value+'T00:00:00');const today=new Date();today.setHours(0,0,0,0);if(start>today){el.innerHTML='<p>Tanggalnya masih di masa depan—cek lagi yaa 😊</p>';return}const days=Math.floor((today-start)/86400000);const years=Math.floor(days/365.2425);const months=Math.floor((days%365.2425)/30.437);const remaining=Math.floor(days-years*365.2425-months*30.437);el.innerHTML=`<div><strong>${years}</strong><span>tahun</span></div><div><strong>${months}</strong><span>bulan</span></div><div><strong>${Math.max(0,remaining)}</strong><span>hari</span></div><div><strong>${days}</strong><span>total hari bersama 💞</span></div>`}
@@ -168,5 +178,20 @@ function updateBirthdayCountdown(){
 updateBirthdayCountdown();setInterval(updateBirthdayCountdown,1000);
 
 function reveal(){const p=document.getElementById('surprise');p.hidden=false;p.scrollIntoView({behavior:'smooth',block:'center'});for(let i=0;i<18;i++)setTimeout(hearts,i*70)}
+
+
+function openGiftAndPlay(){
+ const overlay=document.getElementById('giftOverlay');
+ if(overlay) overlay.style.display='none';
+ const frame=document.getElementById('songFrame');
+ const player=document.getElementById('songPlayer');
+ if(frame){
+   frame.src='https://www.youtube.com/embed/AR2-ux3w9bs?autoplay=1&playsinline=1&rel=0';
+   if(player) player.style.display='block';
+ }
+ const letter=document.getElementById('letter');
+ if(letter) letter.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
 </script>
 </body></html>
