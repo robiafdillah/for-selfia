@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#f8a9c8">
-<title>Happy Birthday Selfia — 14 November 💗</title>
+<title>Happy birthday, sayangkuuu! ❤️🥹🎂 — 14 November 💗</title>
 <style>
 :root{--pink:#f6a6c7;--deep:#b83269;--cream:#fff7fb;--rose:#ffe0ed;--text:#653047}
 *{box-sizing:border-box} html{scroll-behavior:smooth}
@@ -74,8 +74,25 @@ footer{text-align:center;padding:30px 15px 45px;font:12px Arial,sans-serif;color
  <div class="section-card center">
   <div class="kicker">A song for you</div><h2>Lagu untuk Hari Spesialmu 🎵</h2>
   <p><strong>“Sempurnakan Harimu” — Rey Mbayang</strong></p>
-  <p class="small">Putar lagu ini dari aplikasi musik pilihanmu sambil membaca suratnya. Pemutar audio otomatis belum disertakan karena file musiknya belum tersedia.</p>
-  <a class="pill" style="display:inline-block;text-decoration:none" href="https://www.youtube.com/results?search_query=Sempurnakan+Harimu+Rey+Mbayang" target="_blank" rel="noopener">Cari lagu di YouTube ▶</a>
+  <p class="small">Tekan tombol di bawah untuk memutar lagu langsung di halaman hadiah ini. 🎶 Safari/iPhone biasanya perlu sentuhan tombol terlebih dahulu sebelum audio boleh diputar.</p>
+  <button class="pill" id="playSongBtn" onclick="playSong()">Putar lagu untuk Selfia ▶</button>
+  <div id="songPlayer" style="display:none;max-width:560px;margin:20px auto 0;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px #a8326320">
+   <iframe id="songFrame" title="Sempurnakan Harimu — Rey Mbayang" width="100%" height="200" style="border:0;display:block" src="" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <p class="small">Pemutar menggunakan video YouTube resmi yang disematkan, jadi kamu tetap berada di website ini. Jika pemutaran tidak tersedia di browser, <a href="https://www.youtube.com/watch?v=AR2-ux3w9bs" target="_blank" rel="noopener" style="color:#b83269">buka lagu di YouTube</a>.</p>
+ </div>
+</section>
+
+
+<section id="ulangtahun">
+ <div class="section-card center">
+  <div class="kicker">Counting down to your special day</div>
+  <h2>Menuju Hari Spesialmu 🎂</h2>
+  <p>14 November 2026 — hari untuk merayakan seseorang yang begitu berarti buatku. 💗</p>
+  <div class="count" id="birthdayCountdown">
+   <div><strong>♡</strong><span>sedang menghitung</span></div>
+  </div>
+  <p class="small">Semoga hari ulang tahunmu dipenuhi hal-hal baik, tawa, dan banyak cinta.</p>
  </div>
 </section>
 
@@ -119,7 +136,7 @@ footer{text-align:center;padding:30px 15px 45px;font:12px Arial,sans-serif;color
 <section id="kejutan">
  <div class="final">
   <div class="kicker" style="color:#ffe4ef">One last thing...</div>
-  <h2>Untuk Selfia, kesayanganku 💖</h2>
+  <h2>Buat sayangkuuu, Selfia ❤️, kesayanganku 💖</h2>
   <p>Kalau aku bisa minta satu hal untuk ulang tahunmu, aku ingin kamu selalu punya alasan untuk bahagia—dan semoga aku bisa ikut menjadi salah satu alasannya.</p>
   <button class="pill secondary" onclick="reveal()">Tekan untuk kejutan terakhir 🎁</button>
   <p id="surprise" hidden>🎉 Surpriseee! Kamu berharga, kamu pantas dicintai dengan baik, dan kamu layak mendapatkan banyak hal indah. Selamat ulang tahun, sayang. Aku sayang kamu! 💗💗💗</p>
@@ -127,10 +144,29 @@ footer{text-align:center;padding:30px 15px 45px;font:12px Arial,sans-serif;color
 </section>
 <footer>Dibuat dengan banyak cinta, khusus untuk Selfia Alfi Nazilatur Rohma ♡</footer>
 <script>
-function hearts(){const e=document.createElement('div');e.className='floating';e.textContent=['♡','♥','💗','✧'][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(14+Math.random()*20)+'px';e.style.color=['#d84f8d','#f08db6','#fff'][Math.floor(Math.random()*3)];e.style.animationDuration=(6+Math.random()*6)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),12500)}
+
+function playSong(){
+ const player=document.getElementById('songPlayer');
+ const frame=document.getElementById('songFrame');
+ player.style.display='block';
+ frame.src='https://www.youtube-nocookie.com/embed/AR2-ux3w9bs?autoplay=1&playsinline=1&rel=0';
+ document.getElementById('playSongBtn').textContent='Lagu sedang diputar ♫';
+ player.scrollIntoView({behavior:'smooth',block:'center'});
+}
+\nfunction hearts(){const e=document.createElement('div');e.className='floating';e.textContent=['♡','♥','💗','✧'][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(14+Math.random()*20)+'px';e.style.color=['#d84f8d','#f08db6','#fff'][Math.floor(Math.random()*3)];e.style.animationDuration=(6+Math.random()*6)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),12500)}
 setInterval(hearts,450);
 function loadPhoto(input){const file=input.files&&input.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{const box=input.parentElement;box.innerHTML='';const img=document.createElement('img');img.src=reader.result;img.alt='Foto kenangan';box.appendChild(img);box.appendChild(input);};reader.readAsDataURL(file)}
 function countDays(){const value=document.getElementById('dateTogether').value;const el=document.getElementById('counter');if(!value){el.innerHTML='<p>Isi tanggal jadian kalian dulu, ya 💗</p>';return}const start=new Date(value+'T00:00:00');const today=new Date();today.setHours(0,0,0,0);if(start>today){el.innerHTML='<p>Tanggalnya masih di masa depan—cek lagi yaa 😊</p>';return}const days=Math.floor((today-start)/86400000);const years=Math.floor(days/365.2425);const months=Math.floor((days%365.2425)/30.437);const remaining=Math.floor(days-years*365.2425-months*30.437);el.innerHTML=`<div><strong>${years}</strong><span>tahun</span></div><div><strong>${months}</strong><span>bulan</span></div><div><strong>${Math.max(0,remaining)}</strong><span>hari</span></div><div><strong>${days}</strong><span>total hari bersama 💞</span></div>`}
+
+function updateBirthdayCountdown(){
+ const el=document.getElementById('birthdayCountdown'); if(!el)return;
+ const now=new Date(); let target=new Date(now.getFullYear(),10,14,0,0,0);
+ if(now>=target) target=new Date(now.getFullYear()+1,10,14,0,0,0);
+ const ms=target-now, days=Math.floor(ms/86400000), hours=Math.floor(ms%86400000/3600000), mins=Math.floor(ms%3600000/60000), secs=Math.floor(ms%60000/1000);
+ el.innerHTML=`<div><strong>${days}</strong><span>hari</span></div><div><strong>${hours}</strong><span>jam</span></div><div><strong>${mins}</strong><span>menit</span></div><div><strong>${secs}</strong><span>detik</span></div>`;
+}
+updateBirthdayCountdown();setInterval(updateBirthdayCountdown,1000);
+
 function reveal(){const p=document.getElementById('surprise');p.hidden=false;p.scrollIntoView({behavior:'smooth',block:'center'});for(let i=0;i<18;i++)setTimeout(hearts,i*70)}
 </script>
 </body></html>
