@@ -89,13 +89,9 @@ footer{text-align:center;padding:30px 15px 45px;font:12px Arial,sans-serif;color
 <section id="musik">
  <div class="section-card center">
   <div class="kicker">A song for you</div><h2>Lagu untuk Hari Spesialmu 🎵</h2>
-  <p><strong>“Sempurnakan Harimu” — Rey Mbayang</strong></p>
-  <p class="small">Tekan tombol di bawah untuk memutar lagu langsung di halaman hadiah ini. 🎶 Safari/iPhone biasanya perlu sentuhan tombol terlebih dahulu sebelum audio boleh diputar.</p>
-  <button class="pill" id="playSongBtn" onclick="playSong()">Putar lagu untuk Selfia ▶</button>
-  <div id="songPlayer" style="display:none;max-width:560px;margin:20px auto 0;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px #a8326320">
-   <iframe id="songFrame" title="Sempurnakan Harimu — Rey Mbayang" width="100%" height="200" style="border:0;display:block" src="" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  </div>
-  <p class="small">Pemutar menggunakan video YouTube resmi yang disematkan, jadi kamu tetap berada di website ini. Jika pemutaran tidak tersedia di browser, <a href="https://www.youtube.com/watch?v=AR2-ux3w9bs" target="_blank" rel="noopener" style="color:#b83269">buka lagu di YouTube</a>.</p>
+  <p><strong>“Sempurnakan Hariku” — Rey Mbayang</strong></p>
+  <p class="small">Lagu akan mulai diputar saat kamu membuka hadiah ini. ❤️</p>
+  <audio id="birthdaySong" controls preload="auto" style="width:100%;max-width:560px;margin:16px auto;display:block"><source src="sempurnakan-hariku.mp3" type="audio/mpeg"></audio>
  </div>
 </section>
 
@@ -183,14 +179,16 @@ function reveal(){const p=document.getElementById('surprise');p.hidden=false;p.s
 function openGiftAndPlay(){
  const overlay=document.getElementById('giftOverlay');
  if(overlay) overlay.style.display='none';
- const frame=document.getElementById('songFrame');
- const player=document.getElementById('songPlayer');
- if(frame){
-   frame.src='https://www.youtube.com/embed/AR2-ux3w9bs?autoplay=1&playsinline=1&rel=0';
-   if(player) player.style.display='block';
+ const song=document.getElementById('birthdaySong');
+ if(song){
+   song.volume=0.75;
+   const playAttempt=song.play();
+   if(playAttempt && typeof playAttempt.catch==='function'){
+     playAttempt.catch(()=>{ /* Browser may require a manual tap on the audio controls. */ });
+   }
  }
- const letter=document.getElementById('letter');
- if(letter) letter.scrollIntoView({behavior:'smooth',block:'start'});
+ const letter=document.getElementById('surat');
+ if(letter) setTimeout(()=>letter.scrollIntoView({behavior:'smooth',block:'start'}),250);
 }
 
 </script>
